@@ -1,0 +1,11 @@
+{
+  "domain": "butenunbinnen",
+  "name": "buten un binnen",
+  "codeowners": ["@timniklas"],
+  "config_flow": true,
+  "documentation": "https://github.com/timniklas/hass-butenunbinnen",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/timniklas/hass-butenunbinnen/issues",
+  "version": "0.0.0",
+  "single_config_entry": true
+}
