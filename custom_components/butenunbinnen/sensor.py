@@ -33,9 +33,9 @@ async def async_setup_entry(
     sensors = []
     
     for index in range(1, 6):
-      sensors.append(
+        sensors.append(
         NewsSensor(coordinator, index)
-      )
+        )
 
     # Create the sensors.
     async_add_entities(sensors)
@@ -44,7 +44,7 @@ class NewsSensor(CoordinatorEntity):
     
     _attr_should_poll = False
     _attr_has_entity_name = True
-    _attr_icon = "mdi:car"
+    _attr_icon = "mdi:newspaper"
     
     def __init__(self, coordinator: ButenunbinnenCoordinator, id: int) -> None:
         super().__init__(coordinator)
@@ -55,7 +55,7 @@ class NewsSensor(CoordinatorEntity):
     @property
     def _newsitem(self):
         return self.coordinator.data.newsitems[self._newsid]
-  
+
     @callback
     def _handle_coordinator_update(self) -> None:
         self.async_write_ha_state()
@@ -67,6 +67,6 @@ class NewsSensor(CoordinatorEntity):
     @property
     def extra_state_attributes(self):
         return {
-          "summary": self._newsitem['summary'],
-          "link": self._newsitem['link']
+            "summary": self._newsitem['summary'],
+            "link": self._newsitem['link']
         }
