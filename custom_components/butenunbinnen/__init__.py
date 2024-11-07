@@ -16,7 +16,7 @@ from .coordinator import ButenunbinnenCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS: list[Platform] = [Platform.CAMERA, Platform.SENSOR]
+PLATFORMS: list[Platform] = [Platform.SENSOR]
 
 
 @dataclass
@@ -42,7 +42,7 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
 
     # Test to see if api initialised correctly, else raise ConfigNotReady to make HA retry setup
     # TODO: Change this to match how your api will know if connected or successful update
-    if not coordinator.api.connected:
+    if not coordinator.connected:
         raise ConfigEntryNotReady
 
     # Initialise a listener for config flow options changes.
