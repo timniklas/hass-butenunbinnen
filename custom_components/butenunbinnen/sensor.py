@@ -68,5 +68,6 @@ class NewsSensor(CoordinatorEntity):
     def extra_state_attributes(self):
         return {
             "summary": self._newsitem['summary'],
+            "updated": self._newsitem['updated'],
             "link": self._newsitem['link']
         }
