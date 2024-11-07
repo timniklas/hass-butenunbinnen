@@ -46,7 +46,8 @@ class ButenunbinnenCoordinator(DataUpdateCoordinator):
             # Polling interval. Will only be polled if there are subscribers.
             update_interval=timedelta(seconds=60),
         )
-      self.websession = async_get_clientsession(hass)
+        self.connected: bool = False
+        self.websession = async_get_clientsession(hass)
 
     async def async_update_data(self):
         """Fetch data from API endpoint.
@@ -70,6 +71,7 @@ class ButenunbinnenCoordinator(DataUpdateCoordinator):
                         "link": element.getElementsByTagName('link')[0].attributes['href'].value
                     })
 
+                self.connected = True
                 return ButenunbinnenAPIData(newsitems=items)
         except ClientError as err:
             # This will show entities as unavailable by raising UpdateFailed exception
