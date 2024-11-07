@@ -68,6 +68,7 @@ class ButenunbinnenCoordinator(DataUpdateCoordinator):
                     items.append({
                         "title": element.getElementsByTagName('title')[0].firstChild.data,
                         "summary": element.getElementsByTagName('summary')[0].firstChild.data,
+                        "updated": element.getElementsByTagName('updated')[0].firstChild.data,
                         "link": element.getElementsByTagName('link')[0].attributes['href'].value
                     })
 
