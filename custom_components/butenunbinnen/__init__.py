@@ -16,7 +16,7 @@ from .coordinator import ButenunbinnenCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS: list[Platform] = [Platform.CAMERA]
+PLATFORMS: list[Platform] = [Platform.CAMERA, Platform.SENSOR]
 
 
 @dataclass
