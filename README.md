@@ -9,7 +9,7 @@
 
 ## Overview
 
-The Fitness Park Home Assistant Custom Integration allows you to integrate your butenunbinnen studio with your Home Assistant setup.
+The buten un binnen Home Assistant Custom Integration allows you to integrate the butenunbinnen news with your Home Assistant setup.
 
 ## Installation
 
